@@ -32,6 +32,11 @@ export const TransferSlice = createSlice({
 
                return tr
             })
+         },
+         LogOutClear:(state)=>{
+            state.Services=[];
+            state.status='';
+            state.transfersBooked=[];
          }
     }
 });
@@ -39,4 +44,4 @@ export const TransferSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { changeStatus,setServices,setTransfersBooked,
-changeStatusTransferRedux, } = TransferSlice.actions;
+changeStatusTransferRedux,LogOutClear } = TransferSlice.actions;

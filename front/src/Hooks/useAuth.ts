@@ -9,6 +9,7 @@ import { showAlert } from "../Helpers/ShowAlert";
 import { useNavigate } from "react-router-dom";
 import { LoginResponse } from "../Interface/Auth/ApiAuth.interface";
 import { inputFieldsRegister } from "../Auth/pages/RegisterPage";
+import { LogOutClear } from "../store/TransferSlice";
 
 export const useAuth=()=>{
 
@@ -72,7 +73,7 @@ export const useAuth=()=>{
 
     const onLogout=()=>{
         dispatch(LogOut());
-
+        dispatch(LogOutClear())
         Cookies.remove('token')
 
         return navigate('/auth/login')
